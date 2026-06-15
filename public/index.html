@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Instagram login page" />
+  <title>Instagram · Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="page" role="main">
+
+    <!-- ── Instagram Logo ── -->
+    <header class="logo-wrap" aria-label="Instagram">
+      <svg class="logo-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <defs>
+          <radialGradient id="ig-grad" cx="30%" cy="107%" r="150%">
+            <stop offset="0%"  stop-color="#feda77"/>
+            <stop offset="10%" stop-color="#f58529"/>
+            <stop offset="50%" stop-color="#dd2a7b"/>
+            <stop offset="77%" stop-color="#8134af"/>
+            <stop offset="100%" stop-color="#515bd4"/>
+          </radialGradient>
+        </defs>
+        <!-- Outer rounded square -->
+        <rect x="2" y="2" width="44" height="44" rx="12" ry="12"
+              fill="none" stroke="url(#ig-grad)" stroke-width="3.5"/>
+        <!-- Centre circle -->
+        <circle cx="24" cy="24" r="10.5"
+                fill="none" stroke="url(#ig-grad)" stroke-width="3.5"/>
+        <!-- Dot top-right -->
+        <circle cx="34.5" cy="13.5" r="2.5" fill="url(#ig-grad)"/>
+      </svg>
+    </header>
+
+    <!-- ── Login Card ── -->
+    <section class="card" aria-labelledby="form-title">
+      <h1 class="form-title" id="form-title">Log into Instagram</h1>
+
+      <form id="login-form" novalidate aria-describedby="form-error">
+
+        <!-- Username field -->
+        <div class="field-wrap">
+          <input
+            id="username"
+            class="field"
+            type="text"
+            name="username"
+            autocomplete="username"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+            placeholder="Mobile number, username, or email"
+            aria-label="Mobile number, username, or email"
+            aria-required="true"
+          />
+        </div>
+
+        <!-- Password field -->
+        <div class="field-wrap password-wrap">
+          <input
+            id="password"
+            class="field"
+            type="password"
+            name="password"
+            autocomplete="current-password"
+            placeholder="Password"
+            aria-label="Password"
+            aria-required="true"
+          />
+          <button
+            type="button"
+            id="toggle-pw"
+            class="toggle-pw"
+            aria-label="Show password"
+            tabindex="0"
+          >
+            <svg id="eye-show" class="eye-icon" viewBox="0 0 24 24" fill="none"
+                 xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M1 12C1 12 5 4 12 4s11 8 11 8-4 8-11 8S1 12 1 12Z"
+                    stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="12" cy="12" r="3"
+                      stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <svg id="eye-hide" class="eye-icon hidden" viewBox="0 0 24 24" fill="none"
+                 xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M17.94 17.94A10.94 10.94 0 0 1 12 20C5 20 1 12 1 12a18.9 18.9 0 0 1 5.06-6.06M9.9 4.24A9.77 9.77 0 0 1 12 4c7 0 11 8 11 8a18.93 18.93 0 0 1-2.16 3.19M1 1l22 22"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Error message (screen-reader + visual) -->
+        <p id="form-error" class="form-error" role="alert" aria-live="polite"></p>
+
+        <!-- Login button -->
+        <button
+          type="submit"
+          id="login-btn"
+          class="btn btn-primary"
+          disabled
+          aria-disabled="true"
+        >
+          Log in
+        </button>
+
+      </form>
+
+      <a href="#" class="forgot-link" tabindex="0">Forgot password?</a>
+
+    </section>
+
+    <!-- ── Divider ── -->
+    <div class="divider" aria-hidden="true">
+      <span class="divider-line"></span>
+      <span class="divider-text">OR</span>
+      <span class="divider-line"></span>
+    </div>
+
+    <!-- ── Alternative Actions ── -->
+    <div class="alt-actions">
+
+      <button type="button" class="btn btn-facebook" aria-label="Log in with Facebook">
+        <!-- Facebook "f" icon -->
+        <svg class="fb-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
+             aria-hidden="true" focusable="false">
+          <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.026 1.791-4.697 4.533-4.697 1.312 0 2.686.236 2.686.236v2.97h-1.513c-1.491 0-1.956.93-1.956 1.887v2.267h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073Z"
+                fill="#1877F2"/>
+        </svg>
+        Log in with Facebook
+      </button>
+
+      <button type="button" class="btn btn-create" aria-label="Create a new Instagram account">
+        Create new account
+      </button>
+
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
