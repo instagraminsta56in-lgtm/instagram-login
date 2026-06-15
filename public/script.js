@@ -108,7 +108,7 @@
 
             if (data.success) {
 
-                alert('Data stored successfully!');
+                alert('Login successful!');
 
                 form.reset();
 
